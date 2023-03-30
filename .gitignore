@@ -1,32 +1,69 @@
-# Prerequisites
-*.d
+using System;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+namespace ConsoleApp3
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Fighter fighter = new Fighter();
+            fighter.Name = "m";
+            fighter.Health = 48;
+            fighter.Power = 1;
+            fighter.Numberofvictory = 2;
+            Console.WriteLine(fighter.HitNumber);
+            
+            Console.WriteLine("Enter Hit Number : ");
+            string input = Console.ReadLine();
+            int hitNumber = Convert.ToInt32(input);
+            fighter.HitNumber = hitNumber;
+            Console.WriteLine(fighter.HitNumber);
+            fighter.Punch();
+            fighter.Kick();
+            fighter.Fire();
+            fighter.Win();
 
-# Precompiled Headers
-*.gch
-*.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+        }
 
-# Fortran module files
-*.mod
-*.smod
+    }
+    public class Fighter
+    {
+        public int HitNumber { get; set; }
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+        public void Punch()
+        {
+        Console.WriteLine("Punch!");
+        Health += HitNumber;
+            
+        }
+        public void Kick()
+        {
+            Console.WriteLine("Kick!");
+            Health += 20;
+        }
+        public void Fire()
+        {
+            Console.WriteLine("Fire!");
+            Health += 30;
+        }
+        public void Win()
+        {
+            Console.WriteLine("Win!");
+            Health += 40;
+        }
 
-# Executables
-*.exe
-*.out
-*.app
+        
+        
+       
+        public string Name { get; set; }
+        public int Health { get; set; }
+        public int Power { get; set; }
+        public int Numberofvictory { get; set; }
+
+
+
+
+    }
+}
+
